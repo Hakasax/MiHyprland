@@ -9,7 +9,7 @@ hl.monitor({
     disabled = true
 })
 ----APPS
-local archivos = "nautilus"
+local archivos = "kitty -e yazi"
 local terminal = "kitty"
 local menu = "fuzzel"
 local web = "firefox"
@@ -38,7 +38,7 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = tr
 hl.on("hyprland.start", function()
     hl.exec_cmd("waybar &")
     hl.exec_cmd("dunst")
-    hl.exec_cmd(terminal)
+    hl.exec_cmd("kitty -e btop")
     hl.exec_cmd("wal -R &")
     hl.exec_cmd("awww-daemon")
 end)
@@ -126,7 +126,7 @@ hl.config({
 })
 ----WORKSPACES
 for i = 1, 10 do
-    local key = i % 10 -- 10 maps to key 0
+    local key = i % 10
     hl.bind(mod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
     hl.bind(mod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
 end
