@@ -35,9 +35,6 @@ def main():
     except subprocess.CalledProcessError as e:
         print(f"Error al ejecutar awww: {e}")
     except FileNotFoundError:
-        print("ERROR NO SE ENCONTRO AWWW DEJA INSTALAR")
-        print("Si esta wea se muere al tratar haz: sudo pacman -S awww ")
-        subprocess.run(["sudo pacman -S awww"])
-
+        print("ERROR NO SE ENCONTRO AWWW INSTALALO CON: sudo pacman -S awww")
 if __name__=="__main__":
     main()
