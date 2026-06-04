@@ -32,14 +32,16 @@
 
     "clock": {
         "format": "{:%a %d %b  %H:%M}",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "kitty -e nautilus"
     },
 
     "network": {
         "format-wifi": "󰖩",
         "format-ethernet": "󰈀",
         "format-disconnected": "󰖪",
-        "tooltip-format": "{essid} - {ipaddr}"
+        "tooltip-format": "{essid} - {ipaddr}",
+        "on-click": "kitty -e wlctl"
     },
 
     "pulseaudio": {
@@ -52,7 +54,7 @@
                 "󰕾"
             ]
         },
-        "on-click": "pavucontrol"
+        "on-click": "kitty -e wiremix"
     },
 
     "tray": {
