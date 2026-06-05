@@ -40,7 +40,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("waybar &")
     hl.exec_cmd("dunst")
     hl.exec_cmd("kitty -e btop")
-    hl.exec_cmd("wal -i Wallpapers/Teto_2.jpg")
+    hl.exec_cmd("wal -R &")
     hl.exec_cmd("awww-daemon")
 end)
 ----VISUALES
