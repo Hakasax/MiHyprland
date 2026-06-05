@@ -44,30 +44,61 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("awww-daemon")
 end)
 ----VISUALES
+local function clean_wal_color(color)
+    if not color then
+        return "rgba(9932CCee)"
+    end
+    
+    -- Limpiar el formato: rgba(#901E27ff) -> rgba(901E27ff)
+    local cleaned = color:gsub("rgba%(%#", "rgba(")
+    
+    return cleaned
+end
+
+local function load_wal_colors()
+    local home = os.getenv("HOME")
+    local file = io.open(home .. "/.cache/wal/colors-hyprland.conf", "r")
+    if not file then
+        return {}
+    end
+    
+    local colors = {}
+    for line in file:lines() do
+        local var, value = line:match("^%$(%w+)%s*=%s*(.-)%s*$")
+        if var and value then
+            colors[var] = clean_wal_color(value)
+        end
+    end
+    file:close()
+    return colors
+end
+
+local wal = load_wal_colors()
+
 hl.config({
     general = {
-	gaps_in = 5,
-	gaps_out = 15,
-	border_size = 4,
-	col = {
-	   active_border = "rgba(9932CCee)",
-	},
-	layout = "dwindle"	
+        gaps_in = 5,
+        gaps_out = 15,
+        border_size = 4,
+        col = {
+            active_border = wal.color2 or "rgba(9932CCee)",
+        },
+        layout = "dwindle"    
     },
     decoration = {
-	rounding = 10,
-	rounding_power = 2,
-	active_opacity = 1.0,
-	inactive_opacity = 0.5,
-  	blur = {
-	   enabled = true,
-	   size = 6,
-	   passes = 2,
-	   vibrancy = 0.1696,
-	},
+        rounding = 10,
+        rounding_power = 2,
+        active_opacity = 1.0,
+        inactive_opacity = 0.5,
+        blur = {
+            enabled = true,
+            size = 6,
+            passes = 2,
+            vibrancy = 0.1696,
+        },
     },
     animations = {
-	enabled = true,
+        enabled = true,
     },
 })
 ----TECLADO
