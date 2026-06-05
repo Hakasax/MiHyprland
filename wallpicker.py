@@ -31,6 +31,7 @@ def main():
     wallpaper_path=os.path.join(wallpaper_dir, wallpapers[indice])
     try:
         subprocess.run(["awww", "img", wallpaper_path], check=True)
+        subprocess.run(["wal", "-i", wallpaper_path], check=True)
         print(f"\nWallpaper cambiado a: {wallpapers[indice]}")
     except subprocess.CalledProcessError as e:
         print(f"Error al ejecutar awww: {e}")
