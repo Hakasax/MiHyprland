@@ -81,7 +81,7 @@ hl.config({
         gaps_out = 15,
         border_size = 4,
         col = {
-            active_border = wal.color2 or "rgba(9932CCee)",
+            active_border = wal.color2,
         },
         layout = "dwindle"    
     },
@@ -109,7 +109,6 @@ hl.config({
     }
 })
 ----COSAS Q NOSE Q MRD SON PERO ESTAN EN EL EXAMPLE
--- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
 hl.curve("easeOutQuint",   { type = "bezier", points = { {0.23, 1},    {0.32, 1}    } })
 hl.curve("easeInOutCubic", { type = "bezier", points = { {0.65, 0.05}, {0.36, 1}    } })
 hl.curve("linear",         { type = "bezier", points = { {0, 0},       {1, 1}       } })
