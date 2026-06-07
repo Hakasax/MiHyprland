@@ -39,7 +39,6 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = tr
 hl.on("hyprland.start", function()
     hl.exec_cmd("waybar &")
     hl.exec_cmd("dunst")
-    hl.exec_cmd("kitty -e btop")
     hl.exec_cmd("wal -R &")
     hl.exec_cmd("awww-daemon")
 end)
@@ -48,20 +47,15 @@ local function clean_wal_color(color)
     if not color then
         return "rgba(9932CCee)"
     end
-    
-    -- Limpiar el formato: rgba(#901E27ff) -> rgba(901E27ff)
     local cleaned = color:gsub("rgba%(%#", "rgba(")
-    
     return cleaned
 end
-
 local function load_wal_colors()
     local home = os.getenv("HOME")
     local file = io.open(home .. "/.cache/wal/colors-hyprland.conf", "r")
     if not file then
         return {}
     end
-    
     local colors = {}
     for line in file:lines() do
         local var, value = line:match("^%$(%w+)%s*=%s*(.-)%s*$")
@@ -72,9 +66,7 @@ local function load_wal_colors()
     file:close()
     return colors
 end
-
 local wal = load_wal_colors()
-
 hl.config({
     general = {
         gaps_in = 5,
@@ -114,10 +106,7 @@ hl.curve("easeInOutCubic", { type = "bezier", points = { {0.65, 0.05}, {0.36, 1}
 hl.curve("linear",         { type = "bezier", points = { {0, 0},       {1, 1}       } })
 hl.curve("almostLinear",   { type = "bezier", points = { {0.5, 0.5},   {0.75, 1}    } })
 hl.curve("quick",          { type = "bezier", points = { {0.15, 0},    {0.1, 1}     } })
-
--- Default springs
 hl.curve("easy",           { type = "spring", mass = 1, stiffness = 71.2633, dampening = 15.8273644 })
-
 hl.animation({ leaf = "global",        enabled = true,  speed = 10,   bezier = "default" })
 hl.animation({ leaf = "border",        enabled = true,  speed = 5.39, bezier = "easeOutQuint" })
 hl.animation({ leaf = "windows",       enabled = true,  speed = 4.79, spring = "easy" })
@@ -135,21 +124,16 @@ hl.animation({ leaf = "workspaces",    enabled = true,  speed = 1.94, bezier = "
 hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 1.21, bezier = "almostLinear", style = "fade" })
 hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "fade" })
 hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "quick" })
--- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
 hl.config({
     dwindle = {
-        preserve_split = true, -- You probably want this
+        preserve_split = true,
     },
 })
-
--- See https://wiki.hypr.land/Configuring/Layouts/Master-Layout/ for more
 hl.config({
     master = {
         new_status = "master",
     },
 })
-
--- See https://wiki.hypr.land/Configuring/Layouts/Scrolling-Layout/ for more
 hl.config({
     scrolling = {
         fullscreen_on_one_column = true,
