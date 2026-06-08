@@ -3,20 +3,15 @@
     font-size: 14px;
     min-height: 0;
 }
-
 window#waybar {
     background: rgba(0, 0, 0, 0);
     border-radius: 16px;
     border: 1px solid rgba(0, 0, 0, 0);
 }
-
-/* Módulos generales */
 .modules-left, .modules-center, .modules-right {
     margin: 6px 10px;
     padding: 0 4px;
 }
-
-/* Estilo de los workspaces */
 #workspaces button {
     color: #aaaaaa;
     padding: 0 6px;
@@ -24,20 +19,16 @@ window#waybar {
     background: transparent;
     transition: all 0.2s ease;
 }
-
 #workspaces button.active {
     color: #ffffff;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 8px;
 }
-
 #workspaces button:hover {
     color: #ffffff;
     background: rgba(255, 255, 255, 0.3);
     border-radius: 8px;
 }
-
-/* Reloj */
 #clock {
     color: #ffffff;
     background: rgba(255, 255, 255, 0.15);
@@ -45,50 +36,37 @@ window#waybar {
     border-radius: 20px;
     font-weight: bold;
 }
-
-/* Red */
 #network {
     color: #aaffdd;
     padding: 0 8px;
 }
-
 #network.disconnected {
     color: #ff8888;
 }
-
-/* Audio */
 #pulseaudio {
     color: #ddaaff;
     padding: 0 8px;
 }
-
 #pulseaudio.muted {
     color: #ff8888;
 }
-
-/* Bandeja del sistema */
 #tray {
     padding: 0 6px;
     margin-right: 4px;
 }
-
 #tray > .passive {
     -gtk-icon-effect: dim;
 }
-
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background: rgba(255, 100, 100, 0.3);
     border-radius: 12px;
 }
-
-/* Tooltips */
 tooltip {
     background: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
-
 tooltip label {
     color: #ffffff;
 }
