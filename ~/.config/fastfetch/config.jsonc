@@ -2,12 +2,12 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
   "display": {
     "key": {
-      "width": 10
+      "width": 12
     },
     "size": {
       "binaryPrefix": "jedec"
     },
-    "separator": ""
+    "separator": " ➜ "
   },
   "logo": {
     "type": "auto",
@@ -40,7 +40,7 @@
     },
     {
       "type": "packages",
-      "key": "pkgs",
+      "key": "Paquetes",
       "keyColor": "#F9E2AF"
     },
     {
@@ -83,16 +83,10 @@
       "type": "disk",
       "key": "Disco",
       "keyColor": "#74C7EC",
-      "folders": [
-        "/"
-      ],
+      "folders": ["/"],
       "format": "{size-used} / {size-total}"
     },
     "break",
-    {
-      "type": "custom",
-      "format": "\u001b[38;2;249;226;175m󰮯\u001b[0m \u001b[38;2;203;166;247m󰊠\u001b[0m \u001b[38;2;116;199;236m󰊠\u001b[0m \u001b[38;2;245;194;231m󰊠\u001b[0m \u001b[38;2;250;179;135m󰊠\u001b[0m \u001b[38;2;166;227;161m󰊠\u001b[0m \u001b[38;2;148;226;213m󰊠\u001b[0m \u001b[38;2;180;190;254m󰊠\u001b[0m"
-    },
-    "break"
+    "colors"
   ]
 }
