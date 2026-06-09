@@ -2,11 +2,14 @@
 hl.monitor({
     output = "VGA-1",
     mode = "1366x768@60",
-    scale = 1
+    scale = 1,
+    position = "0x0"
 })
 hl.monitor({
     output = "LVDS-1",
-    disabled = true
+    mode = "1366x768@60",
+    scale = 1,
+    position = "0x-768"
 })
 ----APPS
 local archivos = "kitty -e yazi"
@@ -35,6 +38,8 @@ hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = tr
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),                  { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),                  { locked = true, repeating = true })
 ----AUTOINICIO
 hl.on("hyprland.start", function()
     hl.exec_cmd("waybar &")
@@ -96,9 +101,12 @@ hl.config({
 ----TECLADO
 hl.config({
     input = {
-	kb_layout = "latam",
-	follow_mouse = 1
-    }
+        kb_layout  = "latam",
+        follow_mouse = 1,
+        touchpad = {
+            natural_scroll = true,
+        },
+    },
 })
 ----COSAS Q NOSE Q MRD SON PERO ESTAN EN EL EXAMPLE
 hl.curve("easeOutQuint",   { type = "bezier", points = { {0.23, 1},    {0.32, 1}    } })
