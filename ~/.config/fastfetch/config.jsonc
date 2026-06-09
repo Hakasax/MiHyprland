@@ -56,16 +56,10 @@
       "format": "{pretty-name}"
     },
     {
-      "type": "terminalfont",
-      "key": "Fuentes",
-      "keyColor": "#F5C2E7"
-    },
-    {
-      "type": "command",
+      "type": "wm",
       "key": "WM",
       "keyColor": "#89DCEB",
-      "text": "echo 'Hyprland'",
-      "format": "{1}"
+      "format": "{pretty-name}"
     },
     {
       "type": "cpu",
