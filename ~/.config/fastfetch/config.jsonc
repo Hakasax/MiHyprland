@@ -23,19 +23,19 @@
     "break",
     {
       "type": "host",
-      "key": "ho",
+      "key": "Host",
       "keyColor": "#CBA6F7",
       "format": "{name}"
     },
     {
       "type": "os",
-      "key": "os",
+      "key": "OS",
       "keyColor": "#94E2D5",
       "format": "{name}"
     },
     {
       "type": "kernel",
-      "key": "ker",
+      "key": "Kernel",
       "keyColor": "#74C7EC"
     },
     {
@@ -45,60 +45,48 @@
     },
     {
       "type": "shell",
-      "key": "sh",
+      "key": "Shell",
       "keyColor": "#F5C2E7",
       "format": "{pretty-name}"
     },
     {
       "type": "terminal",
-      "key": "ter",
+      "key": "Terminal",
       "keyColor": "#94E2D5",
       "format": "{pretty-name}"
     },
     {
       "type": "terminalfont",
-      "key": "fn",
+      "key": "Fuentes",
       "keyColor": "#F5C2E7"
     },
     {
       "type": "command",
-      "key": "wm",
+      "key": "WM",
       "keyColor": "#89DCEB",
-      "text": "echo 'Quartz Compositor'",
+      "text": "echo 'Hyprland'",
       "format": "{1}"
     },
     {
-      "type": "uptime",
-      "key": "up",
-      "keyColor": "#FAB387"
-    },
-    {
       "type": "cpu",
-      "key": "cpu",
+      "key": "CPU",
       "keyColor": "#CBA6F7",
       "format": "{name}"
     },
     {
       "type": "memory",
-      "key": "ram",
+      "key": "RAM",
       "keyColor": "#94E2D5",
       "format": "{used} / {total}"
     },
     {
       "type": "disk",
-      "key": "disk",
+      "key": "Disco",
       "keyColor": "#74C7EC",
       "folders": [
         "/"
       ],
       "format": "{size-used} / {size-total}"
-    },
-    {
-      "type": "command",
-      "key": "bat",
-      "keyColor": "#A6E3A1",
-      "text": "pmset -g batt | tail -1 | sed -E 's/.*\\t//; s/; */ /g; s/ present.*//' | while read p s t r; do printf \"\\033[38;2;166;227;161m%s\\033[0m %s %s %s\" \"$p\" \"$s\" \"$t\" \"$r\"; done",
-      "format": "{}"
     },
     "break",
     {
