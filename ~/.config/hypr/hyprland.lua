@@ -18,6 +18,7 @@ local terminal = "kitty"
 local menu = "fuzzel"
 local web = "firefox"
 local captura = "hyprshot -m region"
+local wallpicker = "kitty -e /usr/bin/python /home/hakasax/GITHUB/MiHyprland/MiHyprland/wallpicker.py"
 ----BINDS
 local mod = "SUPER"
 hl.bind(mod .. " + Q", hl.dsp.exec_cmd(terminal))
@@ -26,7 +27,7 @@ hl.bind(mod .. " + F", hl.dsp.exec_cmd(web))
 hl.bind(mod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mod .. " + Print", hl.dsp.exec_cmd(captura))
 hl.bind(mod .. " + C", hl.dsp.window.close())
-hl.bind(mod .. " + W", hl.dsp.exec_cmd("kitty -e /usr/bin/python /home/hakasax/GITHUB/MiHyprland/MiHyprland/wallpicker.py"))
+hl.bind(mod .. " + W", hl.dsp.exec_cmd(wallpicker))
 hl.bind(mod .. " + M", hl.dsp.exec_cmd("loginctl terminate-user \"$USER\""))
 hl.bind(mod .. " + left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mod .. " + right", hl.dsp.focus({ direction = "right" }))
