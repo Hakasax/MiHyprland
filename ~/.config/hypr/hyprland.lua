@@ -16,7 +16,7 @@ hl.monitor({
 local archivos = "kitty -e yazi"
 local terminal = "kitty"
 local menu = "fuzzel"
-local web = "firefox"
+local web = "flatpak run app.zen_browser.zen"
 local captura = "hyprshot -m region"
 local wallpicker = "kitty -e /usr/bin/python /home/hakasax/GITHUB/MiHyprland/MiHyprland/wallpicker.py"
 ----BINDS
@@ -33,6 +33,7 @@ hl.bind(mod .. " + left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mod .. " + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mod .. " + down",  hl.dsp.focus({ direction = "down" }))
+hl.bind(mod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
